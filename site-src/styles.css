@@ -44,7 +44,7 @@ blockquote p:last-child{margin:0}
 figure{margin:28px 0 24px}
 img{display:block;max-width:100%;height:auto;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:6px}
 figcaption{font-size:13.5px;line-height:1.65;color:var(--muted);text-align:center;margin:8px auto 0;max-width:620px}
-.figure-scroll{max-width:100%}.figure-link{display:block;width:fit-content;max-width:100%;margin:0 auto;text-decoration:none}
+.figure-scroll{max-width:100%}.figure-link{display:block;width:100%;max-width:100%;margin:0 auto;text-decoration:none}
 
 /* 表：内容幅に収め、本文幅を超える場合はラッパー内で横スクロール */
 .table-wrap{width:fit-content;max-width:100%;overflow-x:auto;margin:18px 0 24px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
