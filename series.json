@@ -5,7 +5,7 @@
   "title": "媒体固有性で読む九つの芸術",
   "subtitle": "建築から漫画まで、芸術を媒体の条件から読み解く、全10回",
   "language": "ja",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "tagline": "芸術の固有性は、媒体の条件と制約から生まれる。",
   "related": [
     {
@@ -75,7 +75,12 @@
       "title": "絵画——窓から壁へ",
       "subtitle": "平面性、支持体と顔料、写真との競争が絵画を定義する",
       "summary": "グリーンバーグ理論の中心にある平面性を軸に、絵画の固有条件と表現領域を見る。写真との競争と、純化の極限がたどり着いた先を扱う。",
-      "path": "chapters/03-painting.md"
+      "path": "chapters/03-painting.md",
+      "sources": [
+        "greenberg-modernist-painting",
+        "alberti-de-pictura",
+        "albers-interaction-of-color"
+      ]
     },
     {
       "number": 4,

@@ -35,7 +35,7 @@
 
 ## GitHubで読む
 
-このREADMEと各回の `.md` をGitHubの **Preview** で開く。外部の画像やフォントは参照しない。
+このREADMEと各回の `.md` をGitHubの **Preview** で開く。
 
 ## ブラウザで読む（GitHub Pages）
 

@@ -7,7 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build import parse_markdown, render, map_url, build, site_index_text
-from validate import validate, walk
+from validate import validate, walk, svg_errors
 from check_html import check, Document
 
 SERIES = json.loads((ROOT / 'series.json').read_text(encoding='utf-8'))
@@ -86,6 +86,46 @@ class RepositoryTests(unittest.TestCase):
             output = Path(d)
             (output / 'index.html').write_text('<html><a href="missing.html">Link</a></html>')
             self.assertTrue(any('missing target' in e for e in check(output)['errors']))
+
+    def test_caption_with_link_becomes_figcaption(self):
+        text = '![代替テキスト](https://commons.wikimedia.org/wiki/Special:FilePath/A.jpg?width=800)\n\n*図1-1：説明。出典：[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A.jpg)。*\n\n次の段落。\n'
+        output = render(text)
+        self.assertEqual(output.count('<figcaption'), 1)
+        self.assertIn('<figcaption>図1-1：説明。出典：<a href="https://commons.wikimedia.org/wiki/File:A.jpg">Wikimedia Commons</a>。</figcaption>', output)
+        self.assertNotIn('<p><em>図1-1', output)
+        self.assertIn('alt="代替テキスト"', output)
+
+    def test_alt_only_figure_has_no_caption(self):
+        output = render('![表紙の説明](../assets/illustrations/x.svg)\n')
+        self.assertEqual(output.count('<figcaption'), 0)
+        self.assertIn('alt="表紙の説明"', output)
+
+    def test_footnotes_move_before_bottom_nav(self):
+        text = '本文[^a]。\n\n## 参考文献・注記\n\n[^a]: 注記。\n\n<!-- NAV:BOTTOM -->\n---\n\n[← 第1回](a.md) | [連載目次](../README.md)\n<!-- /NAV -->\n'
+        output = render(text)
+        self.assertLess(output.index('class="footnotes'), output.index('chapter-nav-bottom'))
+        self.assertEqual(output.count('class="footnotes'), 1)
+
+    def test_site_has_no_footer(self):
+        with tempfile.TemporaryDirectory() as d:
+            output = Path(d) / 'reader'
+            build(output)
+            for page in output.rglob('*.html'):
+                self.assertNotIn('<footer', page.read_text(encoding='utf-8'))
+
+    def test_html_checker_allows_only_listed_image_hosts(self):
+        with tempfile.TemporaryDirectory() as d:
+            output = Path(d)
+            (output / 'index.html').write_text('<html><figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/A.jpg"><figcaption>c</figcaption></figure></html>')
+            self.assertFalse(any('external resource' in e for e in check(output)['errors']))
+            (output / 'index.html').write_text('<html><img src="https://example.org/a.jpg"></html>')
+            self.assertTrue(any('external resource' in e for e in check(output)['errors']))
+
+    def test_svg_rejects_executable_content(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / 'x.svg'
+            p.write_text('<svg viewBox="0 0 10 10" role="img"><title>X</title><desc>Y</desc><script>alert(1)</script></svg>')
+            self.assertTrue(any('forbidden SVG' in x for x in svg_errors(p)))
 
     def test_html_checker_rejects_network_images(self):
         with tempfile.TemporaryDirectory() as d:
