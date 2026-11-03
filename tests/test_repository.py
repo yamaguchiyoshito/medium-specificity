@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -106,6 +107,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(output.count('<figcaption'), 1)
         photo = render('![説明](https://commons.wikimedia.org/wiki/Special:FilePath/A.jpg)\n\n*図1-1：説明。*\n')
         self.assertNotIn('figure-scroll', photo)
+
+    def test_svg_figure_link_is_not_shrink_to_fit(self):
+        # viewBox だけを持つSVGは固有の幅を持たない。リンクが内容幅(fit-content)だと画像が2pxに潰れる。
+        css = (ROOT / 'site-src/styles.css').read_text(encoding='utf-8')
+        rule = re.search(r'\.figure-link\{([^}]*)\}', css).group(1)
+        self.assertIn('width:100%', rule)
+        self.assertNotIn('fit-content', rule)
 
     def test_footnotes_move_before_bottom_nav(self):
         text = '本文[^a]。\n\n## 参考文献・注記\n\n[^a]: 注記。\n\n<!-- NAV:BOTTOM -->\n---\n\n[← 第1回](a.md) | [連載目次](../README.md)\n<!-- /NAV -->\n'
