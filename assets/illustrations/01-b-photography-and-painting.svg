@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-labelledby="t d">
+  <title id="t">写真の登場と絵画の自己定義</title>
+  <desc id="d">三つの段階を左から右へ並べた流れ図。写真が現実の再現を引き受ける、絵画は再現の役割を失う、絵画は色・形・筆触という自分の条件の探求へ向かう。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5d6873"/></marker></defs>
+  <rect width="900" height="300" fill="#faf9f4"/>
+  <rect x="30" y="60" width="240" height="140" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="150" y="105" text-anchor="middle" font-size="20" font-weight="700" fill="#2b7a8c" font-family="sans-serif">写真の登場</text>
+  <text x="150" y="140" text-anchor="middle" font-size="15" fill="#232a33" font-family="sans-serif">現実の外観の再現を</text>
+  <text x="150" y="162" text-anchor="middle" font-size="15" fill="#232a33" font-family="sans-serif">正確にこなす</text>
+  <rect x="330" y="60" width="240" height="140" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="450" y="105" text-anchor="middle" font-size="20" font-weight="700" fill="#d0693a" font-family="sans-serif">絵画の問い</text>
+  <text x="450" y="140" text-anchor="middle" font-size="15" fill="#232a33" font-family="sans-serif">再現ができる理由が</text>
+  <text x="450" y="162" text-anchor="middle" font-size="15" fill="#232a33" font-family="sans-serif">薄れる</text>
+  <rect x="630" y="60" width="240" height="140" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="750" y="105" text-anchor="middle" font-size="20" font-weight="700" fill="#232a33" font-family="sans-serif">自分にしかできないこと</text>
+  <text x="750" y="140" text-anchor="middle" font-size="15" fill="#232a33" font-family="sans-serif">色・形・筆触の探求</text>
+  <text x="750" y="162" text-anchor="middle" font-size="15" fill="#232a33" font-family="sans-serif">（抽象へ）</text>
+  <line x1="272" y1="130" x2="326" y2="130" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <line x1="572" y1="130" x2="626" y2="130" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="450" y="250" text-anchor="middle" font-size="16" fill="#5d6873" font-family="sans-serif">媒体どうしの競争が、各芸術の自己定義を促す</text>
+</svg>

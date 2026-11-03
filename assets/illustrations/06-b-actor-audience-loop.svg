@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="t d">
+  <title id="t">俳優と観客の相互作用</title>
+  <desc id="d">一つの楕円（同じ空間）の中に、左に俳優、右に観客を置き、上の矢印は俳優から観客へ演技と声、下の矢印は観客から俳優へ笑い・沈黙・拍手が返る循環を表す。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5d6873"/></marker></defs>
+  <rect width="900" height="340" fill="#faf9f4"/>
+  <ellipse cx="450" cy="170" rx="410" ry="140" fill="#fff" stroke="#dedad0" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="450" y="50" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">同じ時間・同じ空間（呼吸や気配を共有する）</text>
+  <circle cx="170" cy="170" r="52" fill="#2b7a8c" opacity=".3" stroke="#2b7a8c" stroke-width="2"/>
+  <text x="170" y="177" text-anchor="middle" font-size="22" font-weight="700" fill="#232a33" font-family="sans-serif">俳優</text>
+  <circle cx="730" cy="170" r="52" fill="#d0693a" opacity=".3" stroke="#d0693a" stroke-width="2"/>
+  <text x="730" y="177" text-anchor="middle" font-size="22" font-weight="700" fill="#232a33" font-family="sans-serif">観客</text>
+  <path d="M235 140 C350 100 550 100 665 140" fill="none" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="450" y="112" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">演技・声・間</text>
+  <path d="M665 200 C550 240 350 240 235 200" fill="none" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="450" y="250" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">笑い・沈黙・拍手</text>
+  <text x="450" y="312" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">観客の反応で作品の意味が完成し、俳優は演技を調整する</text>
+</svg>

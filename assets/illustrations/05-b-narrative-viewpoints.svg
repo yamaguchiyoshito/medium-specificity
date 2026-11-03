@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="t d">
+  <title id="t">語りの視点ごとに読者が知れる範囲</title>
+  <desc id="d">三人の人物の内面を点で表し、左の一人称では語り手一人の内面だけが実線の円で囲まれ、右の全知視点では三人すべての内面が一つの大きな円で囲まれる。</desc>
+  <rect width="900" height="340" fill="#faf9f4"/>
+  <text x="225" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#232a33" font-family="sans-serif">一人称</text>
+  <text x="675" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#232a33" font-family="sans-serif">全知視点</text>
+  <g font-family="sans-serif" font-size="14" fill="#232a33">
+    <circle cx="110" cy="170" r="14" fill="#2b7a8c"/><text x="110" y="205" text-anchor="middle">語り手</text>
+    <circle cx="225" cy="130" r="14" fill="#5d6873"/><text x="225" y="165" text-anchor="middle">人物B</text>
+    <circle cx="335" cy="190" r="14" fill="#5d6873"/><text x="335" y="225" text-anchor="middle">人物C</text>
+    <circle cx="560" cy="170" r="14" fill="#2b7a8c"/><text x="560" y="205" text-anchor="middle">人物A</text>
+    <circle cx="675" cy="130" r="14" fill="#2b7a8c"/><text x="675" y="165" text-anchor="middle">人物B</text>
+    <circle cx="785" cy="190" r="14" fill="#2b7a8c"/><text x="785" y="225" text-anchor="middle">人物C</text>
+  </g>
+  <circle cx="110" cy="170" r="48" fill="none" stroke="#2b7a8c" stroke-width="3"/>
+  <ellipse cx="672" cy="165" rx="170" ry="80" fill="none" stroke="#2b7a8c" stroke-width="3"/>
+  <text x="225" y="290" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">読者は語り手と同じ無知の状態に置かれる</text>
+  <text x="675" y="290" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">複数の人物の内面へ自由に入れる</text>
+</svg>

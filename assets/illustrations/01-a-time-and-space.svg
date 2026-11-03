@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="t d">
+  <title id="t">レッシングの区別：詩は時間の芸術、絵画は空間の芸術</title>
+  <desc id="d">左に時間芸術としての詩、右に空間芸術としての絵画を置き、その間を両方向の矢印で結んだ図。詩は出来事が順に進み、絵画は一瞬を一度に見せる。それぞれが得意な領域に専念すべきだという主張を下に示す。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5d6873"/></marker></defs>
+  <rect width="900" height="340" fill="#faf9f4"/>
+  <rect x="60" y="50" width="300" height="170" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="210" y="92" text-anchor="middle" font-size="24" font-weight="700" fill="#2b7a8c" font-family="sans-serif">詩</text>
+  <text x="210" y="122" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">時間芸術</text>
+  <g stroke="#2b7a8c" stroke-width="3" fill="#2b7a8c">
+    <circle cx="110" cy="170" r="7"/><circle cx="170" cy="170" r="7"/><circle cx="230" cy="170" r="7"/><circle cx="290" cy="170" r="7"/>
+    <line x1="117" y1="170" x2="163" y2="170"/><line x1="177" y1="170" x2="223" y2="170"/><line x1="237" y1="170" x2="283" y2="170"/>
+  </g>
+  <text x="210" y="205" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">出来事が順に進む</text>
+  <rect x="540" y="50" width="300" height="170" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="690" y="92" text-anchor="middle" font-size="24" font-weight="700" fill="#d0693a" font-family="sans-serif">絵画</text>
+  <text x="690" y="122" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">空間芸術</text>
+  <rect x="630" y="140" width="120" height="48" fill="#d0693a" opacity=".3" stroke="#d0693a" stroke-width="2"/>
+  <text x="690" y="205" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">一瞬を一度に見せる</text>
+  <line x1="372" y1="135" x2="528" y2="135" stroke="#5d6873" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="450" y="125" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">境界</text>
+  <text x="450" y="280" text-anchor="middle" font-size="18" fill="#232a33" font-family="sans-serif">それぞれが得意な領域に専念すべきだ（レッシングの主張）</text>
+  <text x="450" y="308" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">グリーンバーグはこの発想を絵画の「平面性」の議論に引き継いだ</text>
+</svg>

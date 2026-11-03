@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="t d">
+  <title id="t">同じ顔のショットが、つなぐショットで違う意味を帯びる（模式図）</title>
+  <desc id="d">上段は無表情の顔のショットの次に食べ物のショットをつなぐと「空腹」と読まれ、下段は同じ顔のショットの次に棺のショットをつなぐと「悲しみ」と読まれることを示す模式図。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5d6873"/></marker></defs>
+  <rect width="900" height="360" fill="#faf9f4"/>
+  <g fill="#fff" stroke="#232a33" stroke-width="2"><rect x="60" y="40" width="150" height="110" rx="8"/><rect x="250" y="40" width="150" height="110" rx="8"/><rect x="60" y="210" width="150" height="110" rx="8"/><rect x="250" y="210" width="150" height="110" rx="8"/></g>
+  <g fill="#faf9f4" stroke="#232a33" stroke-width="2">
+    <circle cx="135" cy="95" r="34"/><circle cx="135" cy="265" r="34"/>
+  </g>
+  <g stroke="#232a33" stroke-width="2.5" stroke-linecap="round"><line x1="122" y1="88" x2="122" y2="90"/><line x1="148" y1="88" x2="148" y2="90"/><line x1="122" y1="108" x2="148" y2="108"/><line x1="122" y1="258" x2="122" y2="260"/><line x1="148" y1="258" x2="148" y2="260"/><line x1="122" y1="278" x2="148" y2="278"/></g>
+  <text x="135" y="168" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">顔（同じ映像）</text>
+  <text x="135" y="338" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">顔（同じ映像）</text>
+  <ellipse cx="325" cy="100" rx="42" ry="18" fill="#d0693a" opacity=".5" stroke="#d0693a" stroke-width="2"/>
+  <path d="M290 100 Q325 70 360 100" fill="none" stroke="#d0693a" stroke-width="2"/>
+  <text x="325" y="168" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">食べ物</text>
+  <rect x="290" y="255" width="70" height="30" fill="#5d6873" opacity=".6" stroke="#232a33" stroke-width="2"/>
+  <text x="325" y="338" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">棺</text>
+  <line x1="215" y1="95" x2="245" y2="95" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <line x1="215" y1="265" x2="245" y2="265" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <line x1="405" y1="95" x2="470" y2="95" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <line x1="405" y1="265" x2="470" y2="265" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="480" y="104" font-size="22" font-weight="700" fill="#d0693a" font-family="sans-serif">空腹に見える</text>
+  <text x="480" y="274" font-size="22" font-weight="700" fill="#2b7a8c" font-family="sans-serif">悲しみに見える</text>
+  <text x="700" y="192" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">意味はショットの間に生まれる</text>
+</svg>

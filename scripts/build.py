@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SERIES_FILE = 'series.json'
 READER = 'markdown+footnotes+pipe_tables-tex_math_dollars'
 SITE_INDEX_END = '<!-- SITE-INDEX-END'
+# 本文に直接リンクして表示してよい外部画像のホスト。パブリックドメインの作品をWikimedia Commonsから表示する。
+EXTERNAL_IMAGE_HOSTS = {'commons.wikimedia.org'}
 
 
 def site_index_text(text: str) -> str:
@@ -94,7 +96,45 @@ def render(text: str, prefix: str = '', next_note: str = '') -> str:
     output = run_pandoc(json.dumps(ast, ensure_ascii=False), args)
     if prefix:
         output = output.replace('id="footnotes"', f'id="{prefix}footnotes"')
-    return wrap_tables(output)
+    return footnotes_before_nav(wrap_tables(merge_captions(output)))
+
+
+# Pandoc が alt から作る自動キャプションは aria-hidden 付きで出る。本文由来の figcaption と区別するため、その属性で限定する。
+FIGURE_WITH_CAPTION = re.compile(r'<figure>\s*(<img\b[^>]*>)\s*<figcaption aria-hidden="true">.*?</figcaption>\s*</figure>\s*<p><em>(図.*?)</em></p>', re.S)
+FIGURE_ALT_ONLY = re.compile(r'<figure>\s*(<img\b[^>]*>)\s*<figcaption aria-hidden="true">.*?</figcaption>\s*</figure>', re.S)
+FOOTNOTES = re.compile(r'<section id="[^"]*footnotes"[^>]*>.*?</section>', re.S)
+NAV_BOTTOM_HTML = re.compile(r'<nav class="chapter-nav chapter-nav-bottom".*?</nav>', re.S)
+
+
+IMG_SRC = re.compile(r'\bsrc="([^"]+)"')
+
+
+def figure_body(img: str) -> str:
+    """概念図（SVG）を、横スクロール容器と原寸へのリンクで包む。電話幅では容器が横に流れ、タップで原寸を開ける。
+    外部の作品画像は、そのまま本文幅に収める。"""
+    m = IMG_SRC.search(img)
+    src = m.group(1) if m else ''
+    if not src.endswith('.svg'):
+        return img
+    return f'<div class="figure-scroll"><a class="figure-link" href="{src}" title="図を原寸で開く">{img}</a></div>'
+
+
+def merge_captions(output: str) -> str:
+    """画像直後の「*図N-k：…*」段落を figcaption に取り込み、Pandoc が alt から作る自動キャプションを消す。
+    alt は img の属性として残す。本文側のキャプションがない図は figcaption なしにする。"""
+    output = FIGURE_WITH_CAPTION.sub(lambda m: f'<figure>{figure_body(m.group(1))}<figcaption>{m.group(2)}</figcaption></figure>', output)
+    return FIGURE_ALT_ONLY.sub(lambda m: f'<figure>{figure_body(m.group(1))}</figure>', output)
+
+
+def footnotes_before_nav(output: str) -> str:
+    """Pandoc は脚注を文書の最後に置く。末尾の前後ナビより前（「参考文献・注記」の見出しの直後）へ移す。"""
+    notes = FOOTNOTES.search(output)
+    nav = NAV_BOTTOM_HTML.search(output)
+    if not notes or not nav or notes.start() < nav.start():
+        return output
+    output = output[:notes.start()] + output[notes.end():]
+    nav = NAV_BOTTOM_HTML.search(output)
+    return output[:nav.start()] + notes.group(0) + '\n' + output[nav.start():]
 
 
 def wrap_tables(output: str) -> str:
@@ -134,7 +174,7 @@ def wrap_page(title: str, body: str, source: Path, series: dict, css: str) -> st
 <header class="topbar"><a href="{index_link}" class="brand">{series_title}<span>{code}</span></a><div class="topbar-actions"><a href="{root_link}guides/READING.html">読み方</a><label class="toc-toggle" for="toc-state"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h14"/></svg>目次</label></div></header>
 <label class="toc-backdrop" for="toc-state" aria-hidden="true"></label>
 <aside class="toc-drawer" aria-label="連載の目次"><div class="toc-drawer-head"><strong>全{count}回の連載</strong><label class="toc-close" for="toc-state" title="閉じる"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></label></div><nav aria-label="連載の目次">{''.join(links)}</nav><div class="toc-drawer-foot"><p>{tagline}</p><a href="{root_link}guides/EDITING.html">編集・保守ガイド</a>{other_block}</div></aside>
-<div class="layout"><main id="main" tabindex="-1"><article>{body}</article><footer>{series_title} 全{count}回 — 本文はMarkdown。外部通信なしで閲覧できる。<br>紹介した理論と、本連載の解釈を区別して読む。</footer></main></div></body></html>'''
+<div class="layout"><main id="main" tabindex="-1"><article>{body}</article></main></div></body></html>'''
 
 
 def make_book(series: dict, css: str, dest: Path) -> None:
@@ -147,25 +187,26 @@ def make_book(series: dict, css: str, dest: Path) -> None:
         body = render(source.read_text(encoding='utf-8'), prefix=f'c{c["number"]:02d}-', next_note=next_chapter_note(series, Path(c['path'])))
 
         def rewrite(match: re.Match) -> str:
-            url = html.unescape(match.group(1))
+            attr, url = match.group(1), html.unescape(match.group(2))
             if urlsplit(url).scheme or url.startswith('#'):
                 return match.group(0)
             raw = urlsplit(url).path
-            if raw.endswith('index.html'):
-                return 'href="#book-contents"'
-            md = (source.parent / (raw[:-5] + '.md' if raw.endswith('.html') else raw)).resolve()
-            if str(md) in paths:
-                return f'href="{paths[str(md)]}"'
+            if attr == 'href':
+                if raw.endswith('index.html'):
+                    return 'href="#book-contents"'
+                md = (source.parent / (raw[:-5] + '.md' if raw.endswith('.html') else raw)).resolve()
+                if str(md) in paths:
+                    return f'href="{paths[str(md)]}"'
             target = (source.parent / raw).resolve()
             try:
                 target.relative_to(ROOT)
             except ValueError:
                 return match.group(0)
-            return f'href="{os.path.relpath(target, book_dir)}"'
-        body = re.sub(r'href="([^"]*)"', rewrite, body)
+            return f'{attr}="{os.path.relpath(target, book_dir)}"'
+        body = re.sub(r'(href|src)="([^"]*)"', rewrite, body)
         pieces.append(f'<section class="book-chapter" id="chapter-{c["number"]:02d}">{body}</section>')
     toc = ''.join(f'<li><a href="#chapter-{c["number"]:02d}">第{c["number"]}回　{html.escape(c["title"])}</a></li>' for c in series['chapters'])
-    doc = f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(series['title'])} — 全{len(series['chapters'])}回</title><style>{css}\n.book{{max-width:860px;margin:auto;padding:32px 24px}}.book-chapter{{padding-top:55px;margin-top:65px;border-top:2px solid var(--line)}}@media print{{.book-chapter{{break-before:page}}}}</style></head><body><main class="book"><section id="book-contents"><p class="eyebrow">{code} — COMPLETE SERIES</p><h1>{html.escape(series['title'])}</h1><h2>{html.escape(series['subtitle'])}</h2><p>このファイルは外部通信なしで閲覧できる。</p><ol>{toc}</ol></section>{''.join(pieces)}</main></body></html>'''
+    doc = f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(series['title'])} — 全{len(series['chapters'])}回</title><style>{css}\n.book{{max-width:860px;margin:auto;padding:32px 24px}}.book-chapter{{padding-top:55px;margin-top:65px;border-top:2px solid var(--line)}}@media print{{.book-chapter{{break-before:page}}}}</style></head><body><main class="book"><section id="book-contents"><p class="eyebrow">{code} — COMPLETE SERIES</p><h1>{html.escape(series['title'])}</h1><h2>{html.escape(series['subtitle'])}</h2><ol>{toc}</ol></section>{''.join(pieces)}</main></body></html>'''
     dest.write_text(doc, encoding='utf-8')
 
 
@@ -187,6 +228,9 @@ def build(output: Path) -> dict:
             text = site_index_text(text)
         title = re.search(r'^# (.+)', text, re.M).group(1)
         target.write_text(wrap_page(title, render(text, next_note=next_chapter_note(series, source)), source, series, css), encoding='utf-8')
+    shutil.rmtree(output / 'assets', ignore_errors=True)
+    if (ROOT / 'assets').exists():
+        shutil.copytree(ROOT / 'assets', output / 'assets')
     shutil.copy2(ROOT / SERIES_FILE, output / SERIES_FILE)
     (output / '.nojekyll').write_text('', encoding='utf-8')
     make_book(series, css, output / 'complete.html')

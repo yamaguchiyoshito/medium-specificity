@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="t d">
+  <title id="t">コマとコマのあいだを読者が補う（クロージャー）</title>
+  <desc id="d">二つのコマが左右に並び、左のコマには振り上げられた刃、右のコマには悲鳴を表す吹き出しがある。二つのコマのあいだの空白に、読者が想像で補う出来事を点線の枠と疑問符で示す。</desc>
+  <rect width="900" height="320" fill="#faf9f4"/>
+  <rect x="60" y="50" width="260" height="190" fill="#fff" stroke="#232a33" stroke-width="3"/>
+  <line x1="190" y1="190" x2="250" y2="90" stroke="#232a33" stroke-width="6" stroke-linecap="round"/>
+  <path d="M250 90 L270 76 L262 104 z" fill="#5d6873"/>
+  <text x="190" y="270" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">振り上げられた刃</text>
+  <rect x="340" y="50" width="220" height="190" fill="#d0693a" opacity=".1" stroke="#d0693a" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <text x="450" y="160" text-anchor="middle" font-size="64" font-weight="700" fill="#d0693a" font-family="sans-serif">？</text>
+  <text x="450" y="270" text-anchor="middle" font-size="15" fill="#d0693a" font-family="sans-serif">描かれていない出来事</text>
+  <rect x="580" y="50" width="260" height="190" fill="#fff" stroke="#232a33" stroke-width="3"/>
+  <path d="M640 90 L700 80 L720 110 L760 100 L750 150 L790 170 L740 185 L720 215 L690 190 L650 205 L660 160 L620 140 z" fill="#fff" stroke="#232a33" stroke-width="2.5"/>
+  <text x="705" y="152" text-anchor="middle" font-size="26" font-weight="700" fill="#232a33" font-family="sans-serif">ギャーッ</text>
+  <text x="710" y="270" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">悲鳴</text>
+  <text x="450" y="305" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">読者が間を想像で構成する＝クロージャー</text>
+</svg>

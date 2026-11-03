@@ -8,6 +8,11 @@ import json
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build import EXTERNAL_IMAGE_HOSTS  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -17,6 +22,9 @@ class Document(HTMLParser):
         self.ids = []
         self.links = []
         self.scripts = 0
+        self.images = 0
+        self.figcaptions = 0
+        self.stray_captions = text.count('<p><em>図')
         self.feed(text)
 
     def handle_starttag(self, tag, attributes):
@@ -25,6 +33,10 @@ class Document(HTMLParser):
             self.ids.append(attrs['id'])
         if tag == 'script':
             self.scripts += 1
+        if tag == 'img':
+            self.images += 1
+        if tag == 'figcaption':
+            self.figcaptions += 1
         for attr in ['href', 'src']:
             if attr in attrs:
                 self.links.append((tag, attr, attrs[attr]))
@@ -43,7 +55,7 @@ def check(site: Path) -> dict:
         for tag, attr, url in doc.links:
             parsed = urlsplit(url)
             if parsed.scheme:
-                if attr == 'src' and parsed.scheme != 'data':
+                if attr == 'src' and parsed.scheme != 'data' and not (tag == 'img' and parsed.scheme == 'https' and parsed.netloc in EXTERNAL_IMAGE_HOSTS):
                     errors.append(f'{path.name}: external resource dependency {url}')
                 continue
             target = (path.parent / unquote(parsed.path)).resolve() if parsed.path else path
@@ -59,6 +71,11 @@ def check(site: Path) -> dict:
         errors.append('No generated HTML pages found')
     series = json.loads((ROOT / 'series.json').read_text(encoding='utf-8'))
     chapters = [p for p in docs if p.parent.name == 'chapters']
+    for path, doc in docs.items():
+        if doc.stray_captions:
+            errors.append(f'{path.name}: figure caption paragraph was not merged into figcaption')
+        if path.parent.name == 'chapters' and doc.figcaptions != doc.images:
+            errors.append(f'{path.name}: {doc.images} figures but {doc.figcaptions} figcaptions')
     if len(chapters) != len(series['chapters']):
         errors.append(f'Expected {len(series["chapters"])} chapter HTML pages')
     if (site / 'complete.html').resolve() not in docs:

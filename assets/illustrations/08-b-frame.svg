@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="t d">
+  <title id="t">フレーミング：何を入れ、何を外すか</title>
+  <desc id="d">広い風景の中に長方形のフレームを置いた図。フレームの内側が写真に写る範囲で、外側は排除される。フレームの縁から外へ向かう矢印は、外にも世界が続くことを示唆する。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d0693a"/></marker></defs>
+  <rect width="900" height="340" fill="#faf9f4"/>
+  <rect x="60" y="30" width="780" height="250" fill="#efece4" stroke="#dedad0" stroke-width="2"/>
+  <circle cx="130" cy="110" r="22" fill="#5d6873" opacity=".5"/><circle cx="170" cy="210" r="16" fill="#5d6873" opacity=".5"/>
+  <circle cx="770" cy="90" r="20" fill="#5d6873" opacity=".5"/><rect x="740" y="190" width="60" height="60" fill="#5d6873" opacity=".5"/>
+  <rect x="300" y="70" width="300" height="170" fill="#fff" stroke="#232a33" stroke-width="4"/>
+  <circle cx="400" cy="150" r="26" fill="#2b7a8c" opacity=".7"/><rect x="450" y="150" width="70" height="60" fill="#d0693a" opacity=".6"/>
+  <text x="450" y="60" text-anchor="middle" font-size="16" font-weight="700" fill="#232a33" font-family="sans-serif">写る範囲（入れるもの）</text>
+  <text x="180" y="266" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">外されるもの</text>
+  <text x="710" y="266" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">外されるもの</text>
+  <line x1="602" y1="155" x2="690" y2="155" stroke="#d0693a" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+  <text x="450" y="315" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">フレームは現実の編集であり、外の存在をほのめかすこともできる</text>
+</svg>
