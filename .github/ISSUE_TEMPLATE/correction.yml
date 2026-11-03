@@ -1,0 +1,23 @@
+name: 誤記・出典・表示の修正
+description: 対象回と根拠を指定して修正を提案する
+title: "[修正] "
+body:
+  - type: input
+    id: chapter
+    attributes:
+      label: 対象回・見出し
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: 問題の記述・表示
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: 修正案と根拠
+      description: 文献・再現手順・スクリーンショットを添える
+    validations:
+      required: true
