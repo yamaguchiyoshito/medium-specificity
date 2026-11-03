@@ -59,7 +59,8 @@
       "title": "媒体固有性とは何か",
       "subtitle": "芸術を「媒体の条件」から説明する理論の出発点",
       "summary": "芸術を「何であるか」ではなく「何によって成り立っているか」で問う理論の概要。レッシングからグリーンバーグへの系譜と、制約が創造を決めるという逆説を整理する。",
-      "path": "chapters/01-what-is-medium-specificity.md"
+      "path": "chapters/01-what-is-medium-specificity.md",
+      "sources": ["lessing-laokoon", "greenberg-newer-laocoon", "greenberg-modernist-painting"]
     },
     {
       "number": 2,
@@ -67,7 +68,8 @@
       "title": "建築と彫刻——住めるか、眺めるか",
       "subtitle": "重力と身体のスケールに縛られる建築、実体として眺められる彫刻",
       "summary": "建築は重力と居住可能性、彫刻は実体・多視点・素材の抵抗を条件とする。二つの境界を、セラ、カプーア、ゲーリー、台座の消失から読む。",
-      "path": "chapters/02-architecture-and-sculpture.md"
+      "path": "chapters/02-architecture-and-sculpture.md",
+      "sources": ["le-corbusier-promenade", "kahn-light", "sullivan-tall-office", "michelangelo-rime-151", "foster-gehry", "krauss-expanded-field"]
     },
     {
       "number": 3,
@@ -88,7 +90,8 @@
       "title": "音楽——時間の中にしかないもの",
       "subtitle": "時間の中にだけ存在し、沈黙と対比して意味を持つ芸術",
       "summary": "音楽は演奏の間だけ存在する純粋な時間芸術である。沈黙、旋律・和声・リズム、音色、反復と変奏を手がかりに、言葉や他の芸術との境界を見る。",
-      "path": "chapters/04-music.md"
+      "path": "chapters/04-music.md",
+      "sources": ["cage-433", "webern-brevity", "berlioz-instrumentation", "schoenberg-klangfarbenmelodie", "salieri-prima-la-musica", "wagner-kunstwerk-der-zukunft", "greenberg-newer-laocoon"]
     },
     {
       "number": 5,
@@ -96,7 +99,8 @@
       "title": "文学——言語だけでできた世界",
       "subtitle": "言語記号だけで世界を立ち上げる芸術",
       "summary": "文学は言語記号だけを媒体とし、イメージを読者の想像にゆだねる。内面描写、修辞、語りの視点と、朗読・視覚詩との境界を扱う。",
-      "path": "chapters/05-literature.md"
+      "path": "chapters/05-literature.md",
+      "sources": ["mallarme-un-coup-de-des", "cortazar-rayuela", "booth-rhetoric-of-fiction", "stream-of-consciousness"]
     },
     {
       "number": 6,
@@ -104,7 +108,8 @@
       "title": "舞台芸術——今ここに身体がある",
       "subtitle": "身体の現前と一回性が、舞台芸術を他の媒体から分ける",
       "summary": "舞台芸術は身体の現前、一回性、上演時間と現実時間の一致を条件とする。観客との相互作用と、映像記録やパフォーマンスアートとの境界を見る。",
-      "path": "chapters/06-performing-arts.md"
+      "path": "chapters/06-performing-arts.md",
+      "sources": ["benjamin-aura", "phelan-auslander", "three-unities", "nt-live-phedre", "kaprow-happenings", "abramovic-performances"]
     },
     {
       "number": 7,
@@ -112,7 +117,8 @@
       "title": "映画——編集がつくる時間",
       "subtitle": "モンタージュと運動の錯視が、映画の文法をつくる",
       "summary": "映画はモンタージュ、運動の錯視、視聴覚の同期によって時間を作る。ショット設計、クロスカッティング、音響設計と、演劇の記録・ビデオアートとの違いを扱う。",
-      "path": "chapters/07-cinema.md"
+      "path": "chapters/07-cinema.md",
+      "sources": ["eisenstein-film-form", "kuleshov-effect", "hfr-the-hobbit", "griffith-intolerance", "souriau-diegesis", "bazin-theater-and-cinema"]
     },
     {
       "number": 8,
@@ -120,7 +126,8 @@
       "title": "写真——光の痕跡と瞬間の切断",
       "subtitle": "インデックス性と瞬間の切断、そしてデジタルとAIによる揺らぎ",
       "summary": "写真は光の物理的な痕跡であり、時間を切り取る媒体である。フレーミングや被写界深度の美学と、デジタル加工・生成AIによるインデックス性の揺らぎを見る。",
-      "path": "chapters/08-photography.md"
+      "path": "chapters/08-photography.md",
+      "sources": ["barthes-chambre-claire", "cartier-bresson-images-a-la-sauvette", "daston-galison-objectivity"]
     },
     {
       "number": 9,
@@ -128,7 +135,8 @@
       "title": "漫画——時間を空間に並べる",
       "subtitle": "コマによる時間の空間化と、読者のクロージャー",
       "summary": "漫画はコマで時間を空間に並べ、読者のクロージャーで意味を完成させる。コマ割りと記号の体系、読者が時間を制御できることの意味を扱う。",
-      "path": "chapters/09-comics.md"
+      "path": "chapters/09-comics.md",
+      "sources": ["ninth-art-label", "mccloud-time-frames", "mccloud-closure"]
     },
     {
       "number": 10,
@@ -136,7 +144,8 @@
       "title": "ポストメディウム以後の媒体固有性",
       "subtitle": "媒体の再定義と、理論が今も使える理由",
       "summary": "クラウスの「技術的支持体」とデジタル収斂を踏まえ、媒体固有性を規範ではなく分析の道具として使う立場を整理する。連載全体のまとめも置く。",
-      "path": "chapters/10-post-medium.md"
+      "path": "chapters/10-post-medium.md",
+      "sources": ["krauss-technical-support", "krauss-video-narcissism", "greenberg-newer-laocoon"]
     }
   ]
 }

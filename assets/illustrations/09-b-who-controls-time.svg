@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="t d">
+  <title id="t">時間の進み方を決めるのは誰か：漫画、映画、アニメ化</title>
+  <desc id="d">三つの行に、漫画は読者が読む速さや戻ることで時間を制御する、映画は作り手が決めた速度で観客に流れる、漫画のアニメ化は時間の制御が読者から作り手へ移る、と示す。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5d6873"/></marker></defs>
+  <rect width="900" height="320" fill="#faf9f4"/>
+  <g font-family="sans-serif" fill="#232a33">
+    <text x="40" y="70" font-size="20" font-weight="700">漫画</text>
+    <text x="40" y="160" font-size="20" font-weight="700">映画</text>
+    <text x="40" y="250" font-size="20" font-weight="700">アニメ化</text>
+  </g>
+  <circle cx="180" cy="62" r="24" fill="#2b7a8c" opacity=".35" stroke="#2b7a8c" stroke-width="2"/>
+  <text x="180" y="68" text-anchor="middle" font-size="14" fill="#232a33" font-family="sans-serif">読者</text>
+  <path d="M215 55 C300 25 400 25 480 55" fill="none" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <path d="M480 72 C400 100 300 100 215 72" fill="none" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="560" y="68" font-size="16" fill="#232a33" font-family="sans-serif">速さを選び、戻り、見渡せる</text>
+  <circle cx="180" cy="152" r="24" fill="#d0693a" opacity=".35" stroke="#d0693a" stroke-width="2"/>
+  <text x="180" y="158" text-anchor="middle" font-size="14" fill="#232a33" font-family="sans-serif">作り手</text>
+  <line x1="215" y1="152" x2="480" y2="152" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="560" y="158" font-size="16" fill="#232a33" font-family="sans-serif">決められた速度で観客に流れる</text>
+  <circle cx="180" cy="242" r="24" fill="#d0693a" opacity=".35" stroke="#d0693a" stroke-width="2"/>
+  <text x="180" y="248" text-anchor="middle" font-size="14" fill="#232a33" font-family="sans-serif">作り手</text>
+  <line x1="215" y1="242" x2="480" y2="242" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="560" y="248" font-size="16" fill="#232a33" font-family="sans-serif">時間の制御が読者から作り手へ移る</text>
+</svg>

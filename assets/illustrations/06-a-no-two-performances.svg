@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="t d">
+  <title id="t">同じ演目でも、上演は毎回違う</title>
+  <desc id="d">一つの演目を示す枠の下に、1日目、2日目、3日目の三つの上演が並び、それぞれの時間の流れを表す曲線の形が少しずつ違う。再現ではなく、毎回新しく起きることを示す。</desc>
+  <rect width="900" height="320" fill="#faf9f4"/>
+  <rect x="320" y="25" width="260" height="50" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="450" y="58" text-anchor="middle" font-size="18" font-weight="700" fill="#232a33" font-family="sans-serif">同じ演目</text>
+  <g stroke="#dedad0" stroke-width="2"><line x1="450" y1="75" x2="170" y2="120"/><line x1="450" y1="75" x2="450" y2="120"/><line x1="450" y1="75" x2="730" y2="120"/></g>
+  <g fill="#fff" stroke="#232a33" stroke-width="2"><rect x="50" y="120" width="240" height="130" rx="10"/><rect x="330" y="120" width="240" height="130" rx="10"/><rect x="610" y="120" width="240" height="130" rx="10"/></g>
+  <g fill="none" stroke-width="3.5" stroke-linecap="round">
+    <path d="M70 215 C110 150 140 240 180 180 S250 170 270 200" stroke="#2b7a8c"/>
+    <path d="M350 215 C390 190 420 150 460 190 S530 240 550 170" stroke="#d0693a"/>
+    <path d="M630 200 C670 130 700 210 740 160 S810 230 830 190" stroke="#5d6873"/>
+  </g>
+  <g font-family="sans-serif" font-size="16" fill="#232a33" text-anchor="middle"><text x="170" y="145">1日目</text><text x="450" y="145">2日目</text><text x="730" y="145">3日目</text></g>
+  <text x="450" y="290" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">俳優の状態や観客の反応で、各回は別の上演になる</text>
+</svg>

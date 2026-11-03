@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="t d">
+  <title id="t">台座のある彫刻と、台座のない彫刻</title>
+  <desc id="d">左は台座の上に像が立ち、日常の床から切り離された伝統的な彫刻。右は箱形の作品が床に直接置かれ、観者と同じ床の上にある台座のない彫刻。</desc>
+  <rect width="900" height="340" fill="#faf9f4"/>
+  <text x="225" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#232a33" font-family="sans-serif">台座がある</text>
+  <text x="675" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#232a33" font-family="sans-serif">台座がない</text>
+  <line x1="40" y1="260" x2="410" y2="260" stroke="#232a33" stroke-width="3"/>
+  <rect x="165" y="200" width="120" height="60" fill="#dedad0" stroke="#232a33" stroke-width="2"/>
+  <ellipse cx="225" cy="150" rx="26" ry="30" fill="#2b7a8c" opacity=".6"/>
+  <rect x="199" y="170" width="52" height="30" fill="#2b7a8c" opacity=".6"/>
+  <text x="225" y="294" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">日常の空間から切り離され、自律する</text>
+  <line x1="490" y1="260" x2="860" y2="260" stroke="#232a33" stroke-width="3"/>
+  <rect x="580" y="205" width="90" height="55" fill="#d0693a" opacity=".6" stroke="#232a33" stroke-width="2"/>
+  <rect x="690" y="205" width="90" height="55" fill="#d0693a" opacity=".6" stroke="#232a33" stroke-width="2"/>
+  <circle cx="810" cy="220" r="11" fill="#5d6873"/><rect x="800" y="231" width="20" height="29" fill="#5d6873"/>
+  <text x="675" y="294" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">床に直接置かれ、観者の空間と地続きになる</text>
+</svg>

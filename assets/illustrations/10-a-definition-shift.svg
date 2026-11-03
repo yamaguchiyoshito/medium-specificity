@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="t d">
+  <title id="t">媒体の定義の移り変わり：物質から規則・慣習の層へ</title>
+  <desc id="d">左は、油彩とキャンバスのような物質で媒体を定義する見方。右は、技術的支持体の上に積み重なる規則や慣習の層として媒体を定義するクラウスの見方。その結果、油彩や彫刻ではない技術的支持体の上でも固有性が成り立つと考えられるようになった。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5d6873"/></marker></defs>
+  <rect width="900" height="320" fill="#faf9f4"/>
+  <rect x="40" y="50" width="330" height="170" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="205" y="92" text-anchor="middle" font-size="20" font-weight="700" fill="#d0693a" font-family="sans-serif">物質による定義</text>
+  <text x="205" y="132" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">油彩・キャンバスなど</text>
+  <text x="205" y="160" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">素材が固有性をつくる</text>
+  <text x="205" y="196" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">デジタルでは物質の差が薄れる</text>
+  <line x1="378" y1="135" x2="522" y2="135" stroke="#5d6873" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="450" y="122" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">再定義</text>
+  <rect x="530" y="50" width="330" height="170" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="695" y="92" text-anchor="middle" font-size="20" font-weight="700" fill="#2b7a8c" font-family="sans-serif">規則・慣習の層による定義</text>
+  <text x="695" y="132" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">技術的支持体の上に</text>
+  <text x="695" y="160" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">規則や慣習が積み重なる</text>
+  <text x="695" y="196" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">新しい支持体の上でも固有性が成り立つ</text>
+  <text x="450" y="280" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">固有性は規範ではなく、分析の道具として使う</text>
+</svg>

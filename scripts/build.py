@@ -106,11 +106,24 @@ FOOTNOTES = re.compile(r'<section id="[^"]*footnotes"[^>]*>.*?</section>', re.S)
 NAV_BOTTOM_HTML = re.compile(r'<nav class="chapter-nav chapter-nav-bottom".*?</nav>', re.S)
 
 
+IMG_SRC = re.compile(r'\bsrc="([^"]+)"')
+
+
+def figure_body(img: str) -> str:
+    """概念図（SVG）を、横スクロール容器と原寸へのリンクで包む。電話幅では容器が横に流れ、タップで原寸を開ける。
+    外部の作品画像は、そのまま本文幅に収める。"""
+    m = IMG_SRC.search(img)
+    src = m.group(1) if m else ''
+    if not src.endswith('.svg'):
+        return img
+    return f'<div class="figure-scroll"><a class="figure-link" href="{src}" title="図を原寸で開く">{img}</a></div>'
+
+
 def merge_captions(output: str) -> str:
     """画像直後の「*図N-k：…*」段落を figcaption に取り込み、Pandoc が alt から作る自動キャプションを消す。
     alt は img の属性として残す。本文側のキャプションがない図は figcaption なしにする。"""
-    output = FIGURE_WITH_CAPTION.sub(lambda m: f'<figure>{m.group(1)}<figcaption>{m.group(2)}</figcaption></figure>', output)
-    return FIGURE_ALT_ONLY.sub(lambda m: f'<figure>{m.group(1)}</figure>', output)
+    output = FIGURE_WITH_CAPTION.sub(lambda m: f'<figure>{figure_body(m.group(1))}<figcaption>{m.group(2)}</figcaption></figure>', output)
+    return FIGURE_ALT_ONLY.sub(lambda m: f'<figure>{figure_body(m.group(1))}</figure>', output)
 
 
 def footnotes_before_nav(output: str) -> str:

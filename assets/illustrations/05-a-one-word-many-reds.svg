@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-labelledby="t d">
+  <title id="t">「赤」という一つの言葉と、読者ごとの異なる赤</title>
+  <desc id="d">左に「赤」という文字を置き、そこから三人の読者に矢印が伸びる。三人はそれぞれ色味の違う赤を思い浮かべている。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5d6873"/></marker></defs>
+  <rect width="900" height="320" fill="#faf9f4"/>
+  <rect x="50" y="110" width="150" height="100" rx="10" fill="#fff" stroke="#232a33" stroke-width="2"/>
+  <text x="125" y="177" text-anchor="middle" font-size="52" font-weight="700" fill="#232a33" font-family="sans-serif">赤</text>
+  <text x="125" y="240" text-anchor="middle" font-size="14" fill="#5d6873" font-family="sans-serif">特定の赤は指定されない</text>
+  <line x1="205" y1="140" x2="400" y2="70" stroke="#5d6873" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="205" y1="160" x2="400" y2="160" stroke="#5d6873" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="205" y1="180" x2="400" y2="250" stroke="#5d6873" stroke-width="2" marker-end="url(#ah)"/>
+  <circle cx="450" cy="70" r="36" fill="#c0392b"/><text x="510" y="76" font-size="16" fill="#232a33" font-family="sans-serif">読者A：深い赤</text>
+  <circle cx="450" cy="160" r="36" fill="#e8553d"/><text x="510" y="166" font-size="16" fill="#232a33" font-family="sans-serif">読者B：明るい赤</text>
+  <circle cx="450" cy="250" r="36" fill="#d96a7a"/><text x="510" y="256" font-size="16" fill="#232a33" font-family="sans-serif">読者C：桃色がかった赤</text>
+</svg>

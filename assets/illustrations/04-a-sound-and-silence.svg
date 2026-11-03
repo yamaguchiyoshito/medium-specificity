@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-labelledby="t d">
+  <title id="t">時間軸の上の音と休符</title>
+  <desc id="d">左から右へ進む時間軸の上に、音を表す塗りつぶした長方形と、休符を表す破線の長方形が交互に並ぶ。音は沈黙との対比によって意味を持つ。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5d6873"/></marker></defs>
+  <rect width="900" height="300" fill="#faf9f4"/>
+  <line x1="50" y1="200" x2="850" y2="200" stroke="#5d6873" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="850" y="232" text-anchor="end" font-size="15" fill="#5d6873" font-family="sans-serif">時間</text>
+  <rect x="70" y="110" width="130" height="60" fill="#2b7a8c" opacity=".7"/>
+  <rect x="210" y="110" width="90" height="60" fill="none" stroke="#5d6873" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="310" y="110" width="170" height="60" fill="#2b7a8c" opacity=".7"/>
+  <rect x="490" y="110" width="150" height="60" fill="none" stroke="#5d6873" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="650" y="110" width="60" height="60" fill="#2b7a8c" opacity=".7"/>
+  <rect x="720" y="110" width="110" height="60" fill="none" stroke="#5d6873" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="135" y="95" text-anchor="middle" font-size="15" fill="#232a33" font-family="sans-serif">音</text>
+  <text x="255" y="95" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">休符</text>
+  <text x="565" y="95" text-anchor="middle" font-size="15" fill="#5d6873" font-family="sans-serif">休符</text>
+  <text x="450" y="268" text-anchor="middle" font-size="16" fill="#232a33" font-family="sans-serif">沈黙は、音楽の構成要素である</text>
+</svg>

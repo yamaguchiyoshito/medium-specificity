@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="t d">
+  <title id="t">建築と彫刻の境界：中に入れるか、使えるか</title>
+  <desc id="d">横軸は外から眺めるか中に入れるか、縦軸は使う機能があるかないか。建築は中に入れて使える右上、彫刻は外から眺める左下、セラの鉄板作品やカプーアの《クラウド・ゲート》は中に入れるが使えない右下に置く。ゲーリーのビルバオ・グッゲンハイムは建築から彫刻へ寄る矢印で示す。</desc>
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#d0693a"/></marker></defs>
+  <rect width="900" height="420" fill="#faf9f4"/>
+  <rect x="120" y="30" width="700" height="320" fill="#fff" stroke="#dedad0" stroke-width="2"/>
+  <line x1="470" y1="30" x2="470" y2="350" stroke="#dedad0" stroke-width="2" stroke-dasharray="6 6"/>
+  <line x1="120" y1="190" x2="820" y2="190" stroke="#dedad0" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="295" y="385" text-anchor="middle" font-size="16" fill="#5d6873" font-family="sans-serif">外から眺める</text>
+  <text x="645" y="385" text-anchor="middle" font-size="16" fill="#5d6873" font-family="sans-serif">中に入る</text>
+  <text x="100" y="110" text-anchor="end" font-size="16" fill="#5d6873" font-family="sans-serif">使える</text>
+  <text x="100" y="280" text-anchor="end" font-size="16" fill="#5d6873" font-family="sans-serif">使えない</text>
+  <circle cx="645" cy="105" r="46" fill="#2b7a8c" opacity=".3" stroke="#2b7a8c" stroke-width="2"/>
+  <text x="645" y="112" text-anchor="middle" font-size="22" font-weight="700" fill="#232a33" font-family="sans-serif">建築</text>
+  <circle cx="295" cy="270" r="46" fill="#d0693a" opacity=".3" stroke="#d0693a" stroke-width="2"/>
+  <text x="295" y="277" text-anchor="middle" font-size="22" font-weight="700" fill="#232a33" font-family="sans-serif">彫刻</text>
+  <circle cx="645" cy="270" r="46" fill="#5d6873" opacity=".25" stroke="#5d6873" stroke-width="2"/>
+  <text x="645" y="262" text-anchor="middle" font-size="14" fill="#232a33" font-family="sans-serif">セラの鉄板</text>
+  <text x="645" y="284" text-anchor="middle" font-size="14" fill="#232a33" font-family="sans-serif">カプーア</text>
+  <text x="755" y="272" font-size="13" fill="#5d6873" font-family="sans-serif">境界を試す</text>
+  <line x1="600" y1="130" x2="360" y2="238" stroke="#d0693a" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="440" y="150" font-size="14" fill="#d0693a" font-family="sans-serif">ゲーリーのビルバオ</text>
+  <text x="440" y="170" font-size="14" fill="#d0693a" font-family="sans-serif">（彫刻的な外観）</text>
+</svg>

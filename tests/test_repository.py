@@ -100,6 +100,13 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(output.count('<figcaption'), 0)
         self.assertIn('alt="表紙の説明"', output)
 
+    def test_svg_figures_get_scroll_container_and_full_size_link(self):
+        output = render('![説明](../assets/illustrations/x.svg)\n\n*図1-1：説明。*\n')
+        self.assertIn('<div class="figure-scroll"><a class="figure-link" href="../assets/illustrations/x.svg"', output)
+        self.assertEqual(output.count('<figcaption'), 1)
+        photo = render('![説明](https://commons.wikimedia.org/wiki/Special:FilePath/A.jpg)\n\n*図1-1：説明。*\n')
+        self.assertNotIn('figure-scroll', photo)
+
     def test_footnotes_move_before_bottom_nav(self):
         text = '本文[^a]。\n\n## 参考文献・注記\n\n[^a]: 注記。\n\n<!-- NAV:BOTTOM -->\n---\n\n[← 第1回](a.md) | [連載目次](../README.md)\n<!-- /NAV -->\n'
         output = render(text)
